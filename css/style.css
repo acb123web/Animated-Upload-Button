@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: #F73D93;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    position: relative;
+    width: 200px;
+    height: 70px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgb(0 0 0 /25%);
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    background: #16003B;
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, -50%);
+    width: 135%;
+    height: 400%;
+    border-radius: 50px;
+}
+
+.btn.click:before {
+    animation: background 1s ease-in 1s forwards;
+}
+
+.btn.click h1 {
+    animation: upload-text 1s linear forwards;
+}
+
+.btn.click h2 {
+    animation: ending-text 2.5s linear 0.1s forwards;
+}
+
+.btn.click span {
+    animation: icon 2.5s linear 0.3s forwards;
+}
+
+.btn h1,
+.btn h2 {
+    position: absolute;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.btn h1 {
+    top: 23.5px;
+    left: 76px;
+    color: #2c3d55;
+}
+
+.btn h2 {
+    top: 116.5px;
+    left: 46px;
+    color: #efefef;
+    display: flex;
+    gap: 10px;
+}
+
+h2 i {
+    display: flex !important;
+    align-items: center;
+}
+
+i {
+    font-size: 23px;
+}
+
+.btn span {
+    position: absolute;
+    top: 21px;
+    left: 40px;
+    color: #2c3d55;
+    font-size: 21px;
+}
+
+@keyframes upload-text {
+    0% {
+        left: 95px;
+        transform: scaleX(1);
+    }
+
+    25% {
+        left: 75px;
+        transform: scaleX(0.9);
+    }
+
+    30% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        left: 245px;
+    }
+}
+
+@keyframes background {
+    0% {
+        transform: translate(-150%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes icon {
+    0% {
+        left: 18px;
+        top: 17px;
+    }
+
+    20% {
+        left: 90px;
+        top: 17px;
+    }
+
+    40% {
+        color: #000;
+    }
+
+    65% {
+        left: 90px;
+        top: 17px;
+        color: #fff;
+    }
+
+    78% {
+        left: 90px;
+        top: 25px;
+    }
+
+    100% {
+        left: 90px;
+        top: -200px;
+        color: #fff;
+    }
+}
+
+@keyframes ending-text {
+    0% {
+        top: 116.5px;
+    }
+    70% {
+        top: 116.5px;
+    }
+    100% {
+        top: 22.5px;
+    }
+}
